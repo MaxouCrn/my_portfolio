@@ -1,11 +1,6 @@
-import React from "react"
-
 function Footer() {
     return (
-        <footer
-            className="fixed bottom-0 w-full hidden sm:block"
-            style={{ zIndex: 10 }}
-        >
+        <footer className="fixed bottom-0 w-full hidden sm:block z-10">
             <img
                 src="/assets/vague-japonaise.png"
                 alt="bannière footer"

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import AOS from "aos"
-import "aos/dist/aos.css"
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
@@ -261,7 +260,7 @@ function Header() {
                                 className="transform transition duration-300 hover:scale-110"
                             >
                                 <img
-                                    src="/assets/logos/LIKEDIN.png"
+                                    src="/assets/logos/LINKEDIN.png"
                                     alt="LinkedIn"
                                     className="w-8 h-8"
                                 />

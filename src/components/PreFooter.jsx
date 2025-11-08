@@ -1,6 +1,3 @@
-import React from "react";
-import "aos/dist/aos.css";
-
 function PreFooter() {
     return (
         <div className="bg-custom-brown">
@@ -21,10 +18,7 @@ function PreFooter() {
                         className="flex items-center justify-center transform transition duration-300 hover:scale-110"
                     >
                         <img
-                            src={
-                                process.env.PUBLIC_URL +
-                                "/assets/logos/GITHUB.png"
-                            }
+                            src="/assets/logos/GITHUB.png"
                             alt="GitHub Logo"
                             className="h-auto w-6"
                         />
@@ -36,10 +30,7 @@ function PreFooter() {
                         className="flex items-center justify-center transform transition duration-300 hover:scale-110"
                     >
                         <img
-                            src={
-                                process.env.PUBLIC_URL +
-                                "/assets/logos/LIKEDIN.png"
-                            }
+                            src="/assets/logos/LINKEDIN.png"
                             alt="LinkedIn Logo"
                             className="h-auto w-6"
                         />
@@ -49,7 +40,7 @@ function PreFooter() {
                     Made with{" "}
                     <span className="text-white-500 mx-1">❤️ and</span>
                     <img
-                        src={process.env.PUBLIC_URL + "/assets/logos/REACT.png"}
+                        src="/assets/logos/REACT.png"
                         alt="React Logo"
                         className="inline h-auto w-5 ml-1"
                     />

@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Portfolio - Maxime Caron
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio personnel développé avec React et Vite.
 
-## Available Scripts
+## Technologies utilisées
 
-In the project directory, you can run:
+### Frontend
+- **React** 18.3.1
+- **Tailwind CSS** 3.4.4
+- **AOS** 2.3.4 (Animations au scroll)
 
-### `npm start`
+### Build & Outils
+- **Vite** 7.2.2
+- **PostCSS** 8.5.1
+- **Autoprefixer** 10.4.20
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Services
+- **EmailJS** 4.4.1 (Envoi d'emails)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Prérequis
+- Node.js (version 14 ou supérieure)
+- npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Étapes d'installation
 
-### `npm run build`
+1. **Cloner le projet**
+```bash
+git clone <url-du-repo>
+cd W-PRO-390-LIL-4-1-portfoliotitre-maxime.caron
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Installer les dépendances**
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Configurer EmailJS (optionnel)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Créer un fichier `.env` à la racine :
+```
+VITE_EMAILJS_SERVICE_ID=votre_service_id
+VITE_EMAILJS_TEMPLATE_ID=votre_template_id
+VITE_EMAILJS_PUBLIC_KEY=votre_public_key
+```
 
-### `npm run eject`
+4. **Lancer l'application en développement**
+```bash
+npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+L'application sera accessible sur `http://localhost:5173`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Build de production**
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Les fichiers seront générés dans le dossier `dist/`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Scripts disponibles
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm run dev` - Lance le serveur de développement
+- `npm run build` - Crée le build de production
+- `npm run preview` - Prévisualise le build de production

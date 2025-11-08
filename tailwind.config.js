@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{html,js}"],
+    content: [
+        "./index.html",
+        "./src/**/*.{js,jsx,ts,tsx}",
+    ],
     theme: {
         extend: {
             borderWidth: {
@@ -11,27 +14,17 @@ module.exports = {
                 25: "25px",
                 30: "30px",
             },
-            borderColor: {
+            colors: {
                 "custom-brown": "#756861",
                 "custom-black": "#1E1E24",
                 "custom-beige": "#FFF9F2",
                 "custom-gold": "#FEFBEC",
-            },
-            backgroundColor: {
-                "custom-beige": "#FFF9F2",
-                "custom-black": "#1E1E24",
-                "custom-gold": "#FEFBEC",
-                "custom-brown": "#756861",
-            },
-            opacity: {
-                "0": "0",
             },
             backgroundSize: {
                 "72": "72%",
                 "75": "75%",
                 "85": "85%",
                 "95": "95%",
-                "auto": "auto",
             },
             fontFamily: {
                 "custom-font-japon": ["'Japon-Font'", "sans-serif"],
@@ -49,11 +42,6 @@ module.exports = {
             width: {
                 17: "4.25rem",
             },
-        }
-    },
-    variants: {
-        extend: {
-            opacity: ['responsive']
         }
     },
 }

@@ -4,14 +4,14 @@
 
 @font-face {
     font-family: "Japon-Font";
-    src: url("../public/fonts/Japon.ttf") format("truetype");
+    src: url("/fonts/Japon.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "MADEINFINITY-Font";
-    src: url("../public/fonts/MADEINFINITYPersonalUse-Thin.otf")
+    src: url("/fonts/MADEINFINITYPersonalUse-Thin.otf")
         format("opentype");
     font-weight: normal;
 }

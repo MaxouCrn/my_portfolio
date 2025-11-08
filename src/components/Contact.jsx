@@ -1,6 +1,9 @@
-import React, { useState } from "react"
-import emailjs from "emailjs-com"
+import { useState } from "react"
+import emailjs from "@emailjs/browser"
 import RichTextArea from "./RichTextArea"
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+const PHONE_REGEX = /^(\+?\d{1,4}[-.\s]?)?(\(?\d{1,}\)?[-.\s]?)?\d{1,}([-.\s]?\d{1,})*$/
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -11,7 +14,7 @@ function ContactForm() {
         phone: "",
         message: "",
     })
-    
+
     const [focusedField, setFocusedField] = useState(null)
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [submitStatus, setSubmitStatus] = useState(null)
@@ -20,25 +23,22 @@ function ContactForm() {
         phone: false
     })
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    const phoneRegex = /^(\+?\d{1,4}[-.\s]?)?(\(?\d{1,}\)?[-.\s]?)?\d{1,}([-.\s]?\d{1,})*$/
-
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({
             ...formData,
             [name]: value,
         })
-        
+
         if (name === 'email') {
             setValidationErrors({
                 ...validationErrors,
-                email: value !== "" && !emailRegex.test(value)
+                email: value !== "" && !EMAIL_REGEX.test(value)
             })
         } else if (name === 'phone') {
             setValidationErrors({
                 ...validationErrors,
-                phone: value !== "" && !phoneRegex.test(value)
+                phone: value !== "" && !PHONE_REGEX.test(value)
             })
         }
     }
@@ -53,9 +53,9 @@ function ContactForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
-        const emailValid = formData.email === "" || emailRegex.test(formData.email)
-        const phoneValid = formData.phone === "" || phoneRegex.test(formData.phone)
+
+        const emailValid = formData.email === "" || EMAIL_REGEX.test(formData.email)
+        const phoneValid = formData.phone === "" || PHONE_REGEX.test(formData.phone)
         
         setValidationErrors({
             email: !emailValid,
@@ -74,14 +74,13 @@ function ContactForm() {
 
             emailjs
                 .send(
-                    "service_u5d5gb8",
-                    "template_8e341qj",
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                     emailData,
-                    "M8zuyHM1ESxXR59NR"
+                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
                 )
                 .then(
                     (result) => {
-                        console.log(result.text)
                         setSubmitStatus('success')
                         setTimeout(() => {
                             setFormSubmitted(false)
@@ -97,7 +96,6 @@ function ContactForm() {
                         })
                     },
                     (error) => {
-                        console.log(error.text)
                         setSubmitStatus('error')
                         setTimeout(() => {
                             setFormSubmitted(false)
@@ -109,15 +107,11 @@ function ContactForm() {
     }
 
     return (
-        <div id="contact" className="relative w-full" style={{ zIndex: 1 }}>
+        <div id="contact" className="relative w-full z-[1]">
             <div className="border-12 border-custom-black"></div>
-            <div 
+            <div
                 className="w-full py-16 bg-cover bg-center bg-no-repeat relative"
-                style={{ 
-                    backgroundImage: "url('/assets/bg-contact.jpg')",
-                    backgroundSize: "cover",
-                    position: "relative"
-                }}
+                style={{ backgroundImage: "url('/assets/bg-contact.jpg')" }}
             >
                 <div className="absolute inset-0 bg-black opacity-60"></div>
                 
@@ -339,6 +333,3 @@ function ContactForm() {
 }
 
 export default ContactForm
-
-
-

@@ -1,6 +1,3 @@
-import React from "react";
-import "aos/dist/aos.css";
-
 function AboutMe() {
     return (
         <div id="about" className="min-h-screen mb-8">

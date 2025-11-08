@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react"
-import "aos/dist/aos.css"
+import { useState, useEffect, useRef } from "react"
 import { projects } from "../data/projetData"
+import { stackIconMap } from "../data/skillsData"
 
 function Projects() {
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
     const [showDescriptionAndStacks, setShowDescriptionAndStacks] =
         useState(true)
     const [userInteracted, setUserInteracted] = useState(false)
-    const [inactivityTimer, setInactivityTimer] = useState(null)
+    const inactivityTimerRef = useRef(null)
     const [progress, setProgress] = useState(0)
     const [isMobileView, setIsMobileView] = useState(false)
 
@@ -42,13 +42,18 @@ function Projects() {
 
     useEffect(() => {
         if (userInteracted) {
-            clearTimeout(inactivityTimer)
-            const timer = setTimeout(() => {
+            if (inactivityTimerRef.current) {
+                clearTimeout(inactivityTimerRef.current)
+            }
+            inactivityTimerRef.current = setTimeout(() => {
                 setUserInteracted(false)
             }, 10000)
-            setInactivityTimer(timer)
         }
-        // eslint-disable-next-line
+        return () => {
+            if (inactivityTimerRef.current) {
+                clearTimeout(inactivityTimerRef.current)
+            }
+        }
     }, [userInteracted])
 
     const handleButtonClick = (index) => {
@@ -163,11 +168,12 @@ function Projects() {
                                         className="mb-2"
                                     >
                                         <div className="flex m-2 md:m-3">
-                                            <img
-                                                src={`/assets/logos/${stack}.png`}
-                                                alt={stack}
-                                                className="w-16 h-16 max-sm:w-12 max-sm:h-12"
-                                            />
+                                            <i
+                                                className={`${stackIconMap[stack]} text-6xl max-sm:text-4xl`}
+                                                title={stack}
+                                                aria-label={stack}
+                                                role="img"
+                                            ></i>
                                         </div>
                                     </div>
                                 ))}
