@@ -110,16 +110,16 @@ function ContactForm() {
         <div id="contact" className="relative w-full z-[1]">
             <div className="border-12 border-custom-black"></div>
             <div
-                className="w-full py-16 bg-cover bg-center bg-no-repeat relative"
+                className="w-full py-16 bg-cover bg-center bg-no-repeat bg-fixed relative"
                 style={{ backgroundImage: "url('/assets/bg-contact.jpg')" }}
             >
                 <div className="absolute inset-0 bg-black opacity-60"></div>
                 
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="flex items-center mb-8 max-sm:mb-4">
+                    <div className="flex items-center mb-8 max-lg:mb-4">
                         <div className="h-px flex-grow bg-custom-brown"></div>
                         <div
-                            className="flex text-3xl md:text-4xl lg:text-5xl max-sm:text-2xl px-4
+                            className="flex text-5xl lg:text-7xl  px-4
                             font-custom-font-japon text-white"
                         >
                             <div data-aos="fade-right">
@@ -135,15 +135,15 @@ function ContactForm() {
                         <div className="h-px flex-grow bg-custom-brown"></div>
                     </div>
                     
-                    <div className="max-w-6xl mx-auto bg-custom-black bg-opacity-80 p-6 rounded-lg border-2 border-custom-brown">
+                    <div className="max-w-6xl mx-auto bg-custom-gold p-6 rounded-lg border-2 border-custom-brown">
                         <form
                             onSubmit={handleSubmit}
                             className="grid grid-cols-1 md:grid-cols-2 gap-6"
                         >
                             <div className="relative">
                                 <label
-                                    className={`block text-white text-sm font-bold mb-2 transition-all duration-300 ${
-                                        focusedField === 'from_name' ? 'text-custom-gold' : ''
+                                    className={`block text-custom-black text-sm font-bold mb-2 transition-all duration-300 ${
+                                        focusedField === 'from_name' ? 'text-custom-brown' : ''
                                     }`}
                                     htmlFor="from_name"
                                 >
@@ -158,13 +158,13 @@ function ContactForm() {
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('from_name')}
                                         onBlur={handleBlur}
-                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-sm:py-2 max-sm:px-3 text-gray-700
+                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-lg:py-2 max-lg:px-3 text-gray-700
                                         leading-tight focus:outline-none focus:shadow-outline transition-all duration-300 ${
-                                            focusedField === 'from_name' ? 'border-custom-gold bg-gray-100' : 'border-gray-300'
+                                            focusedField === 'from_name' ? 'border-custom-brown bg-white' : 'border-custom-brown bg-white'
                                         }`}
                                         required
                                     />
-                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-gold rounded-b-md transform transition-all duration-300 ${
+                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-brown rounded-b-md transform transition-all duration-300 ${
                                         focusedField === 'from_name' ? 'scale-x-100' : 'scale-x-0'
                                     }`}></div>
                                 </div>
@@ -172,8 +172,8 @@ function ContactForm() {
                             
                             <div className="relative">
                                 <label
-                                    className={`block text-white text-sm font-bold mb-2 transition-all duration-300 ${
-                                        focusedField === 'email' ? 'text-custom-gold' : ''
+                                    className={`block text-custom-black text-sm font-bold mb-2 transition-all duration-300 ${
+                                        focusedField === 'email' ? 'text-custom-brown' : ''
                                     }`}
                                     htmlFor="email"
                                 >
@@ -188,15 +188,15 @@ function ContactForm() {
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('email')}
                                         onBlur={handleBlur}
-                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-sm:py-2 max-sm:px-3 text-gray-700
+                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-lg:py-2 max-lg:px-3 text-gray-700
                                         leading-tight focus:outline-none focus:shadow-outline transition-all duration-300 ${
-                                            focusedField === 'email' ? 'border-custom-gold bg-gray-100' : 'border-gray-300'
+                                            focusedField === 'email' ? 'border-custom-brown bg-white' : 'border-custom-brown bg-white'
                                         } ${
                                             validationErrors.email ? 'border-red-500' : ''
                                         }`}
                                         required
                                     />
-                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-gold rounded-b-md transform transition-all duration-300 ${
+                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-brown rounded-b-md transform transition-all duration-300 ${
                                         focusedField === 'email' ? 'scale-x-100' : 'scale-x-0'
                                     }`}></div>
                                     {validationErrors.email && (
@@ -207,8 +207,8 @@ function ContactForm() {
                             
                             <div className="relative">
                                 <label
-                                    className={`block text-white text-sm font-bold mb-2 transition-all duration-300 ${
-                                        focusedField === 'phone' ? 'text-custom-gold' : ''
+                                    className={`block text-custom-black text-sm font-bold mb-2 transition-all duration-300 ${
+                                        focusedField === 'phone' ? 'text-custom-brown' : ''
                                     }`}
                                     htmlFor="phone"
                                 >
@@ -223,14 +223,14 @@ function ContactForm() {
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('phone')}
                                         onBlur={handleBlur}
-                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-sm:py-2 max-sm:px-3 text-gray-700
+                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-lg:py-2 max-lg:px-3 text-gray-700
                                         leading-tight focus:outline-none focus:shadow-outline transition-all duration-300 ${
-                                            focusedField === 'phone' ? 'border-custom-gold bg-gray-100' : 'border-gray-300'
+                                            focusedField === 'phone' ? 'border-custom-brown bg-white' : 'border-custom-brown bg-white'
                                         } ${
                                             validationErrors.phone ? 'border-red-500' : ''
                                         }`}
                                     />
-                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-gold rounded-b-md transform transition-all duration-300 ${
+                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-brown rounded-b-md transform transition-all duration-300 ${
                                         focusedField === 'phone' ? 'scale-x-100' : 'scale-x-0'
                                     }`}></div>
                                     {validationErrors.phone && (
@@ -241,8 +241,8 @@ function ContactForm() {
                             
                             <div className="relative md:col-span-2">
                                 <label
-                                    className={`block text-white text-sm font-bold mb-2 transition-all duration-300 ${
-                                        focusedField === 'subject' ? 'text-custom-gold' : ''
+                                    className={`block text-custom-black text-sm font-bold mb-2 transition-all duration-300 ${
+                                        focusedField === 'subject' ? 'text-custom-brown' : ''
                                     }`}
                                     htmlFor="subject"
                                 >
@@ -257,12 +257,12 @@ function ContactForm() {
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('subject')}
                                         onBlur={handleBlur}
-                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-sm:py-2 max-sm:px-3 text-gray-700
+                                        className={`shadow appearance-none border-2 rounded w-full py-3 px-4 max-lg:py-2 max-lg:px-3 text-gray-700
                                         leading-tight focus:outline-none focus:shadow-outline transition-all duration-300 ${
-                                            focusedField === 'subject' ? 'border-custom-gold bg-gray-100' : 'border-gray-300'
+                                            focusedField === 'subject' ? 'border-custom-brown bg-white' : 'border-custom-brown bg-white'
                                         }`}
                                     />
-                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-gold rounded-b-md transform transition-all duration-300 ${
+                                    <div className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-brown rounded-b-md transform transition-all duration-300 ${
                                         focusedField === 'subject' ? 'scale-x-100' : 'scale-x-0'
                                     }`}></div>
                                 </div>
@@ -270,19 +270,18 @@ function ContactForm() {
                             
                             <div className="relative md:col-span-2">
                                 <label
-                                    className={`block text-white text-sm font-bold mb-2 transition-all duration-300 ${
-                                        focusedField === 'message' ? 'text-custom-gold' : ''
+                                    className={`block text-custom-black text-sm font-bold mb-2 transition-all duration-300 ${
+                                        focusedField === 'message' ? 'text-custom-brown' : ''
                                     }`}
                                     htmlFor="message"
                                 >
                                     Message :
                                 </label>
-                                <RichTextArea 
+                                <RichTextArea
                                     value={formData.message}
                                     onChange={handleChange}
                                     onFocus={() => handleFocus('message')}
                                     onBlur={handleBlur}
-                                    isFocused={focusedField === 'message'}
                                     required={true}
                                 />
                             </div>

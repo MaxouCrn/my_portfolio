@@ -96,11 +96,11 @@ function Header() {
     }
 
     return (
-        <header id="home" className="mb-44 max-sm:mb-20 overflow-x-hidden">
+        <header id="home" className="mb-44 max-lg:mb-20 overflow-x-hidden">
             <nav className="bg-custom-gold border-2 p-4 w-full border-custom-gold shadow-xl fixed top-0 z-10">
                 <button
                     onClick={toggleNav}
-                    className="md:hidden flex items-center"
+                    className="lg:hidden flex items-center"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ function Header() {
                     </span>
                 </button>
                 <div
-                    className={`fixed inset-0 bg-black bg-opacity-50 z-0 transition-opacity duration-300 md:hidden ${
+                    className={`fixed inset-0 bg-black bg-opacity-50 z-0 transition-opacity duration-300 lg:hidden ${
                         showNav
                             ? "opacity-100"
                             : "opacity-0 pointer-events-none"
@@ -143,12 +143,12 @@ function Header() {
                     onClick={toggleNav}
                 ></div>
                 <ul
-                    className={`flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-4 justify-center text-base md:text-xl lg:text-2xl cursor-pointer
+                    className={`flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:space-x-4 justify-center text-base lg:text-xl cursor-pointer
                         font-custom-font-japon ${
                             showNav ? "translate-x-0" : "-translate-x-full"
-                        } md:translate-x-0 md:hidden bg-custom-gold fixed left-0 top-0 h-full w-3/4 p-8 shadow-lg z-20 transition-transform duration-300 ease-in-out pt-16`}
+                        } lg:translate-x-0 lg:hidden bg-custom-gold fixed left-0 top-0 h-full w-3/4 p-8 shadow-lg z-20 transition-transform duration-300 ease-in-out pt-16`}
                 >
-                    <li className="absolute top-4 right-4 md:hidden">
+                    <li className="absolute top-4 right-4 lg:hidden">
                         <button onClick={toggleNav} className="text-2xl text-black rounded-full w-8 h-8 flex items-center justify-center">
                             &times;
                         </button>
@@ -273,8 +273,8 @@ function Header() {
                 </ul>
 
                 <ul
-                    className="hidden md:flex flex-row space-x-8 justify-center cursor-pointer
-                    text-base md:text-xl lg:text-4xl font-custom-font-japon relative"
+                    className="hidden lg:flex flex-row space-x-8 justify-center cursor-pointer
+                    text-base lg:text-2xl font-custom-font-japon relative"
                 >
                     <li className="bg-custom-gold opacity-0 animate-fadeIn relative group">
                         <a
@@ -323,9 +323,9 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-            <div className="lg:mt-36 md:mt-24 sm:mt-20 mt-28">
+            <div className="lg:mt-36 mt-28">
                 <div className="border-10 border-custom-black bg-custom-black overflow-hidden">
-                    <p className="text-defillant text-white text-lg max-sm:text-sm font-bold animate-infiniteScrollLeft whitespace-nowrap">
+                    <p className="text-defillant text-white text-lg max-lg:text-sm font-bold animate-infiniteScrollLeft whitespace-nowrap">
                         マキシム |ウェブ開発者 - マキシム |ウェブ開発者 -
                         マキシム |ウェブ開発者 -マキシム |ウェブ開発者 -
                         マキシム |ウェブ開発者 - マキシム |ウェブ開発者 -
@@ -333,30 +333,30 @@ function Header() {
                         マキシム |ウェブ開発者
                     </p>
                 </div>
-                <div className="border-12 border-custom-brown max-sm:border-8"></div>
+                <div className="border-12 border-custom-brown max-lg:border-8"></div>
                 <div className="relative">
                     <img
                         src="/assets/torii-image.jpg"
                         alt="bannière header haut"
-                        className="w-full h-auto object-cover object-top shadow-2xl opacity-80 max-sm:h-[400px]"
+                        className="w-full h-auto object-cover object-top shadow-2xl opacity-80 max-lg:h-[400px]"
                     />
                     <div
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                    bg-black bg-opacity-60 text-white text-center font-custom-font-japon p-4 max-sm:p-5
-                    opacity-0 animate-fadeIn rounded-2xl text-base md:text-lg lg:text-8xl max-sm:text-3xl max-sm:w-[90%]"
+                    bg-black bg-opacity-60 text-white text-center font-custom-font-japon p-4 max-lg:p-5
+                    opacity-0 animate-fadeIn rounded-2xl text-6xl max-lg:w-[90%]"
                     >
                         CARON MAXIME
                         <br />
                         DEVELOPPEUR WEB
                         <br />
-                        <span className="block mt-2 text-xs md:text-sm lg:text-2xl max-sm:text-xs">
+                        <span className="block mt-2 text-xs lg:text-xl max-lg:text-xs">
                             (Je code des pixels et dompte les bugs)
                         </span>
                     </div>
                 </div>
-                <div className="border-12 border-custom-brown max-sm:border-8"></div>
+                <div className="border-12 border-custom-brown max-lg:border-8"></div>
                 <div className="border-10 border-custom-black bg-custom-black overflow-hidden">
-                    <p className="text-defillant text-white text-lg max-sm:text-sm font-bold animate-infiniteScrollRight whitespace-nowrap">
+                    <p className="text-defillant text-white text-lg max-lg:text-sm font-bold animate-infiniteScrollRight whitespace-nowrap">
                         マキシム |ウェブ開発者 - マキシム |ウェブ開発者 -
                         マキシム |ウェブ開発者 -マキシム |ウェブ開発者 -
                         マキシム |ウェブ開発者 - マキシム |ウェブ開発者 -

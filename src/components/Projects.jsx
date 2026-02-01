@@ -13,7 +13,7 @@ function Projects() {
 
     useEffect(() => {
         const checkMobileView = () => {
-            setIsMobileView(window.innerWidth < 640)
+            setIsMobileView(window.innerWidth < 1024)
         }
 
         checkMobileView()
@@ -73,9 +73,9 @@ function Projects() {
     return (
         <div
             id="projects"
-            className="mx-auto mt-32 mb-44 grid grid-cols-1 md:grid-cols-2 gap-20 max-sm:mt-10 max-sm:mb-20 max-sm:gap-10 px-4"
+            className="mx-auto mt-32 mb-44 grid grid-cols-1 lg:grid-cols-2 gap-20 max-lg:mt-10 max-lg:mb-20 max-lg:gap-10 px-4"
         >
-            <div className="max-sm:hidden">
+            <div className="hidden lg:block">
                 <div className="relative overflow-hidden rounded-2xl border-2 border-custom-brown mt-28 group h-96">
                     <img
                         src={currentProject.image}
@@ -90,8 +90,8 @@ function Projects() {
                 <div className="flex items-center mb-6">
                     <div className="h-px flex-grow bg-custom-brown"></div>
                     <div
-                        className="flex text-min md:text-7xl lg:text-7xl sm:text-6xl px-4
-                            font-custom-font-japon text-black max-sm:text-4xl"
+                        className="flex text-5xl lg:text-7xl px-4
+                            font-custom-font-japon text-black "
                     >
                         <div data-aos="fade-up">
                             <span>Pro</span>
@@ -102,7 +102,7 @@ function Projects() {
                     </div>
                     <div className="h-px flex-grow bg-custom-brown"></div>
                 </div>
-                <div className="max-sm:flex max-sm:justify-center max-sm:flex-wrap max-sm:mb-4">
+                <div className="max-lg:flex max-lg:justify-center max-lg:flex-wrap max-lg:mb-4">
                     {projects.map((project, index) => (
                         <button
                             key={project.id}
@@ -119,11 +119,11 @@ function Projects() {
                         </button>
                     ))}
                 </div>
-                <h2 className="text-red-700 font-bold text-3xl font-custom-font-madeinfinity mb-3 max-sm:text-2xl max-sm:text-center">
+                <h2 className="text-red-700 font-bold text-3xl font-custom-font-madeinfinity mb-3 max-lg:text-2xl max-lg:text-center">
                     {currentProject.title}
                 </h2>
 
-                <div className="hidden max-sm:block max-sm:mb-5">
+                <div className="block lg:hidden mb-5">
                     <img
                         src={currentProject.image}
                         alt={currentProject.title}
@@ -136,26 +136,26 @@ function Projects() {
                 {showDescriptionAndStacks ? (
                     <>
                         <div
-                            className="md:mt-10 sm:mt-10 flex flex-col justify-center items-center border-2
-                            border-custom-brown rounded mr-10 mb-5 max-sm:mr-0 max-sm:mt-5"
+                            className="lg:mt-10 flex flex-col justify-center items-center border-2
+                            border-custom-brown rounded mr-10 mb-5 max-lg:mr-0 max-lg:mt-5"
                         >
                             <p
-                                className="px-2 md:px-16 w-max font-black text-2xl max-sm:text-xl
+                                className="px-2 md:px-16 w-max font-black text-2xl max-lg:text-xl
                             -translate-y-5 bg-custom-gold text-red-700"
                             >
                                 Description du projet
                             </p>
-                            <p className="font-custom-font-madeinfinity mb-5 text-justify mr-10 list-disc pl-5 max-sm:mr-5 max-sm:pl-3 max-sm:pr-3 max-sm:text-sm">
+                            <p className="font-custom-font-madeinfinity mb-5 text-justify mr-10 list-disc pl-5 max-lg:mr-5 max-lg:pl-3 max-lg:pr-3 max-lg:text-sm">
                                 {currentProject.description}
                             </p>
                         </div>
 
                         <div
-                            className="md:mt-10 sm:mt-10 flex flex-col justify-center items-center border-2
-                            border-custom-brown rounded mr-10 mb-5 max-sm:mr-0 max-sm:mt-5"
+                            className="lg:mt-10 flex flex-col justify-center items-center border-2
+                            border-custom-brown rounded mr-10 mb-5 max-lg:mr-0 max-lg:mt-5"
                         >
                             <p
-                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-sm:text-xl
+                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-lg:text-xl
                             -translate-y-5 bg-custom-gold text-red-700"
                             >
                                 Stacks
@@ -169,7 +169,7 @@ function Projects() {
                                     >
                                         <div className="flex m-2 md:m-3">
                                             <i
-                                                className={`${stackIconMap[stack]} text-6xl max-sm:text-4xl`}
+                                                className={`${stackIconMap[stack]} text-6xl `}
                                                 title={stack}
                                                 aria-label={stack}
                                                 role="img"
@@ -183,16 +183,16 @@ function Projects() {
                 ) : (
                     <>
                         <div
-                            className="md:mt-10 sm:mt-10 flex flex-col justify-center items-center border-2
-                            border-custom-brown rounded mr-10 mb-5 max-sm:mr-0 max-sm:mt-5"
+                            className="lg:mt-10 flex flex-col justify-center items-center border-2
+                            border-custom-brown rounded mr-10 mb-5 max-lg:mr-0 max-lg:mt-5"
                         >
                             <p
-                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-sm:text-xl
+                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-lg:text-xl
                             -translate-y-5 bg-custom-gold text-red-700"
                             >
                                 Compétences acquises
                             </p>
-                            <ul className="mb-5 text-justify mr-5 list-disc pl-10 max-sm:pl-5 max-sm:pr-3 max-sm:text-sm">
+                            <ul className="mb-5 text-justify mr-5 list-disc pl-10 max-lg:pl-5 max-lg:pr-3 max-lg:text-sm">
                                 {currentProject.competences.map(
                                     (competence, index) => (
                                         <li key={index}>{competence}</li>
@@ -201,21 +201,21 @@ function Projects() {
                             </ul>
                         </div>
                         <div
-                            className="md:mt-10 sm:mt-10 flex flex-col justify-center items-center border-2
-                            border-custom-brown rounded mr-10 mb-5 max-sm:mr-0 max-sm:mt-5"
+                            className="lg:mt-10 flex flex-col justify-center items-center border-2
+                            border-custom-brown rounded mr-10 mb-5 max-lg:mr-0 max-lg:mt-5"
                         >
                             <p
-                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-sm:text-xl
+                                className="mx-auto px-2 md:px-16 w-max font-black text-2xl max-lg:text-xl
                             -translate-y-5 bg-custom-gold text-red-700"
                             >
                                 Réussite / Difficulté
                             </p>
-                            <div className="flex flex-col pr-24 max-sm:pr-3">
+                            <div className="flex flex-col pr-24 max-lg:pr-3">
                                 <div className="mb-4">
-                                    <h3 className="font-custom-font-madeinfinity mb-2 text-lg max-sm:text-base max-sm:pl-3">
+                                    <h3 className="font-custom-font-madeinfinity mb-2 text-lg max-lg:text-base max-lg:pl-3">
                                         Réussites :
                                     </h3>
-                                    <ul className="list-disc pl-10 max-sm:pl-8 max-sm:pr-3 max-sm:text-sm">
+                                    <ul className="list-disc pl-10 max-lg:pl-8 max-lg:pr-3 max-lg:text-sm">
                                         {currentProject.reussites.map(
                                             (reussite, index) => (
                                                 <li key={index}>{reussite}</li>
@@ -224,10 +224,10 @@ function Projects() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-custom-font-madeinfinity mb-2 text-lg max-sm:text-base max-sm:pl-3">
+                                    <h3 className="font-custom-font-madeinfinity mb-2 text-lg max-lg:text-base max-lg:pl-3">
                                         Difficultés :
                                     </h3>
-                                    <ul className="list-disc pl-10 mb-5 max-sm:pl-8 max-sm:pr-3 max-sm:text-sm">
+                                    <ul className="list-disc pl-10 mb-5 max-lg:pl-8 max-lg:pr-3 max-lg:text-sm">
                                         {currentProject.difficultes.map(
                                             (difficulte, index) => (
                                                 <li key={index}>
@@ -241,14 +241,14 @@ function Projects() {
                         </div>
                     </>
                 )}
-                <div className="flex max-sm:flex-col max-sm:items-center">
+                <div className="flex max-lg:flex-col max-lg:items-center">
                     <button
                         onClick={() =>
                             window.open(currentProject.githubLink, "_blank")
                         }
                         className="border-2 border-custom-brown text-base md:text-xl mr-5 cursor-pointer flex
                         items-center bg-custom-gold hover:bg-custom-brown hover:text-white hover:shadow-lg
-                        transition-all duration-500 rounded-lg md:px-4 md:py-2 px-2 shadow max-sm:mb-3 max-sm:mr-0 max-sm:text-sm max-sm:justify-center max-sm:w-full"
+                        transition-all duration-500 rounded-lg md:px-4 md:py-2 px-2 shadow max-lg:mb-3 max-lg:mr-0 max-lg:text-sm max-lg:justify-center max-lg:w-full"
                     >
                         Voir le code source
                     </button>
@@ -256,7 +256,7 @@ function Projects() {
                         onClick={toggleView}
                         className="border-2 border-custom-brown text-base md:text-xl mr-5 cursor-pointer flex
                         items-center bg-custom-gold hover:bg-custom-brown hover:text-white hover:shadow-lg
-                        transition-all duration-500 rounded-lg md:px-4 md:py-2 px-2 shadow max-sm:mr-0 max-sm:text-xs max-sm:text-center max-sm:p-2"
+                        transition-all duration-500 rounded-lg md:px-4 md:py-2 px-2 shadow max-lg:mr-0 max-lg:text-xs max-lg:text-center max-lg:p-2"
                     >
                         {showDescriptionAndStacks
                             ? "Voir les compétences acquises + les réussites et difficultés"

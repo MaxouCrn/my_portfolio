@@ -1,10 +1,10 @@
 function PreFooter() {
     return (
         <div className="bg-custom-brown">
-            <div className="border-12 border-custom-black max-sm:border-8"></div>
+            <div className="border-12 border-custom-black max-lg:border-8"></div>
             <div
                 className="flex flex-col items-center
-                text-white font-custom-font-madeinfinity text-xl pb-24 pt-5 max-sm:pb-16 max-sm:text-base"
+                text-white font-custom-font-madeinfinity text-xl pb-24 pt-5 max-lg:pb-16 max-lg:text-base"
             >
                 <p data-aos="">Caron Maxime</p>
                 <div

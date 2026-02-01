@@ -5,7 +5,6 @@ function RichTextArea({
     onChange,
     onFocus,
     onBlur,
-    isFocused,
     required,
 }) {
     const textareaRef = useRef(null);
@@ -158,7 +157,7 @@ function RichTextArea({
 
     return (
         <>
-            <div className="flex flex-wrap gap-1 mb-2 bg-gray-100 p-1 rounded-t border-2 border-b-0 border-gray-300">
+            <div className="flex flex-wrap gap-1 bg-white p-1 rounded-t border-2 border-b-0 border-custom-brown">
                 <button
                     type="button"
                     onClick={() => handleFormatText("bold")}
@@ -217,19 +216,10 @@ function RichTextArea({
                     onChange={onChange}
                     onFocus={onFocus}
                     onBlur={onBlur}
-                    className={`shadow appearance-none border-2 rounded-b w-full py-2 px-3 max-sm:py-1 max-sm:px-2 text-gray-700
-                    leading-tight focus:outline-none focus:shadow-outline h-[150px] resize-none transition-all duration-300 ${
-                        isFocused
-                            ? "border-custom-gold bg-gray-100"
-                            : "border-gray-300"
-                    }`}
+                    className="shadow appearance-none border-2 border-custom-brown bg-white rounded-b w-full py-2 px-3 max-lg:py-1 max-lg:px-2 text-gray-700
+                    leading-tight focus:outline-none focus:shadow-outline h-[150px] resize-none transition-all duration-300"
                     required={required}
                 />
-                <div
-                    className={`absolute -bottom-1 left-0 right-0 h-1 bg-custom-gold rounded-b-md transform transition-all duration-300 ${
-                        isFocused ? "scale-x-100" : "scale-x-0"
-                    }`}
-                ></div>
             </div>
 
             {value && (

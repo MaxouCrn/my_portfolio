@@ -54,7 +54,7 @@ export const projects = [
         id: 3,
         title: "Tweet_Academie",
         description: `Le projet Tweet_Academie consiste à créer un réseau social de type Twitter, permettant aux utilisateurs de publier des tweets, de suivre d'autres utilisateurs, de recevoir des messages privés et de rechercher des utilisateurs par leur username.
-        Ils ont également la possibilité de modifier leur profil, de gérer leur abonnements et les abonnés.`,
+        Ils ont également la possibilité de modifier leur profil, de gérer leurs abonnements et les abonnés.`,
         stacks: ["PHP", "HTML", "JS", "TAILWINDS", "MYSQL"],
         githubLink: "https://github.com/EpitechWebAcademiePromo2025/W-WEB-090-LIL-1-1-academie-sofiane.bessaha",
         image: "/assets/picture_projets/Tweet_Acdemie.PNG",
